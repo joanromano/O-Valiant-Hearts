@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7451BEC1-77E8-454E-A2E3-B7ADC2858E41}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OValiantHearts</RootNamespace>
+    <AssemblyName>OValiantHearts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>OValiantHearts.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>OValiantHearts.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DotNetZip\CRC32.cs" />
+    <Compile Include="DotNetZip\Deflate.cs" />
+    <Compile Include="DotNetZip\GZipStream.cs" />
+    <Compile Include="DotNetZip\Inflate.cs" />
+    <Compile Include="DotNetZip\InfTree.cs" />
+    <Compile Include="DotNetZip\Tree.cs" />
+    <Compile Include="DotNetZip\Zlib.cs" />
+    <Compile Include="DotNetZip\ZlibBaseStream.cs" />
+    <Compile Include="DotNetZip\ZlibCodec.cs" />
+    <Compile Include="DotNetZip\ZlibConstants.cs" />
+    <Compile Include="Environment\Marketplace.cs" />
+    <Compile Include="Environment\PhoneApplication.cs" />
+    <Compile Include="Environment\PhoneManifest.cs" />
+    <Compile Include="Environment\Resources.cs" />
+    <Compile Include="Feed.xaml.cs">
+      <DependentUpon>Feed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Networking\Http.cs" />
+    <Compile Include="Networking\HttpGetRequest.cs" />
+    <Compile Include="Networking\HttpPostFile.cs" />
+    <Compile Include="Networking\HttpPostRequest.cs" />
+    <Compile Include="Networking\HttpResponse.cs" />
+    <Compile Include="Networking\NetworkState.cs" />
+    <Compile Include="Networking\WakeOnLan.cs" />
+    <Compile Include="ScrollViewerMonitor.cs" />
+    <Compile Include="Storage\ApplicationSettings.cs" />
+    <Compile Include="Utilities\ColorUtility.cs" />
+    <Compile Include="Utilities\DateTimeExtensions.cs" />
+    <Compile Include="Utilities\DateTimeUtilities.cs" />
+    <Compile Include="Utilities\EntityContainer.cs" />
+    <Compile Include="Utilities\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\HttpUtilityExtensions.cs" />
+    <Compile Include="Utilities\IdentityGenerator.cs" />
+    <Compile Include="Utilities\ReflectionExtensions.cs" />
+    <Compile Include="Utilities\StreamExtensions.cs" />
+    <Compile Include="Utilities\StringExtensions.cs" />
+    <Compile Include="Utilities\WeakEvent.cs" />
+    <Compile Include="Utilities\Xml.cs" />
+    <Compile Include="ViewModels\ConcertItemViewModel.cs" />
+    <Compile Include="ViewModels\FeedItemViewModel.cs" />
+    <Compile Include="ViewModels\VideoItemViewModel.cs" />
+    <Compile Include="ViewModels\PanoramaViewModel.cs" />
+    <Compile Include="WindowsPhone7Unleashed\ArgumentValidator.cs" />
+    <Compile Include="WindowsPhone7Unleashed\BindingListener.cs" />
+    <Compile Include="WindowsPhone7Unleashed\BooleanToVisibilityConverter.cs" />
+    <Compile Include="WindowsPhone7Unleashed\DelegateCommand.cs" />
+    <Compile Include="WindowsPhone7Unleashed\IEventCommand.cs" />
+    <Compile Include="WindowsPhone7Unleashed\ImplicitTypeConverter.cs" />
+    <Compile Include="Youtube\PageDeactivator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Youtube\YouTube.cs" />
+    <Compile Include="Youtube\YouTubeQuality.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Feed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <Page Include="Map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="PanoramaBackground.png" />
+    <Resource Include="OVHPanoramaBackground.png" />
+    <Content Include="DotNetZip\Changes.txt" />
+    <Content Include="DotNetZip\License.zlib.txt" />
+    <Resource Include="JsonNET\Newtonsoft.Json.dll" />
+    <Resource Include="fortuneIcon.png" />
+    <Content Include="JsonNET\Newtonsoft.Json.pdb" />
+    <Content Include="JsonNET\Newtonsoft.Json.xml" />
+    <Resource Include="music-live.png" />
+    <Content Include="music.png" />
+    <Content Include="OVH_logo.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
