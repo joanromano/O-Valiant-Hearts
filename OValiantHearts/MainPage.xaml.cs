@@ -34,8 +34,6 @@ namespace OValiantHearts
             //DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
 
-           // panoramaViewModel = new PanoramaViewModel();
-
             // Set the data context of the listbox control to the sample data and load sources
             DataContext = new PanoramaViewModel();
         }
@@ -43,10 +41,7 @@ namespace OValiantHearts
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                //App.ViewModel.LoadData();
-            }
+            
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)

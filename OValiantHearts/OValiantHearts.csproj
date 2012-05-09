@@ -124,8 +124,6 @@
     <Compile Include="WindowsPhone7Unleashed\ImplicitTypeConverter.cs" />
     <Compile Include="Youtube\PageDeactivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ItemViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Youtube\YouTube.cs" />
     <Compile Include="Youtube\YouTubeQuality.cs" />
   </ItemGroup>
@@ -158,9 +156,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -169,7 +164,6 @@
     <Content Include="DotNetZip\Changes.txt" />
     <Content Include="DotNetZip\License.zlib.txt" />
     <Resource Include="JsonNET\Newtonsoft.Json.dll" />
-    <Resource Include="fortuneIcon.png" />
     <Content Include="JsonNET\Newtonsoft.Json.pdb" />
     <Content Include="JsonNET\Newtonsoft.Json.xml" />
     <Resource Include="music-live.png" />
