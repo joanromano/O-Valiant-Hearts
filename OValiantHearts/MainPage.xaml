@@ -29,13 +29,13 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="o valiant hearts">
+        <controls:Panorama Title="o valiant hearts" Foreground="White">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="OVHPanoramaBackground.png"/>
             </controls:Panorama.Background>
  
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="videos">
+            <controls:PanoramaItem Header="videos" Foreground="White">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0" Name="VideosList" ItemsSource="{Binding Videos}" Tap="VideosList_Tap">
                     <ListBox.ItemTemplate>
@@ -51,9 +51,9 @@
                                     <ColumnDefinition MaxWidth="100"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Grid.Column="0" Grid.Row="0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Grid.Column="0" Grid.Row="0" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="White"/>
                                 <Image Source="{Binding Thumbnail}" Height="70" Width="100" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" />
-                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap"  Grid.Column="0" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap"  Grid.Column="0" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF999999"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -62,7 +62,7 @@
  
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="feeds">
+            <controls:PanoramaItem Header="feeds" Foreground="White">
                 <Grid x:Name="ContentPanel" Margin="12,0,12,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -85,12 +85,12 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"  Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Username}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                        <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                        <TextBlock Text="{Binding Username}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" Foreground="#FF999999"/>
+                                        <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" Foreground="#FF999999"/>
                                     </StackPanel>
                                 
                                     <Image Source="{Binding Thumbnail}" Height="70" Width="100" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                    <TextBlock Text="{Binding Message}" TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}"/>
+                                    <TextBlock Text="{Binding Message}" TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}" Foreground="White"/>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -101,24 +101,22 @@
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Loading..." Style="{StaticResource LoadingStyle}"/>
-                        <ProgressBar IsIndeterminate="{Binding Busy}"
-                        VerticalAlignment="Bottom"
-                        Grid.Row="1" />
+                        <TextBlock Text="Loading..." Style="{StaticResource LoadingStyle}" Foreground="Brown"/>
+                        <ProgressBar IsIndeterminate="{Binding Busy}" VerticalAlignment="Bottom" Grid.Row="1" Foreground="Brown" />
                     </Grid>
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item three-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="tour">
+            <controls:PanoramaItem Header="tour" Foreground="White">
 
                 <ListBox Margin="0,0,-12,0" Name="ConcertsList" ItemsSource="{Binding Concerts}" Tap="ConcertsList_Tap">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="5">
-                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White"/>
+                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FF999999"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

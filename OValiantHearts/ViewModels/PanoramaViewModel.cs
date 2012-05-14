@@ -8,12 +8,15 @@ using System.ComponentModel;
 using System.Windows.Input;
 using System;
 using System.Diagnostics;
+using Microsoft.Phone.Net.NetworkInformation;
 
 namespace OValiantHearts.ViewModels
 {
     public class PanoramaViewModel : INotifyPropertyChanged
 
     {
+        private DateTime _lastMessageNoConnection = new DateTime(1970, 1, 1);
+
         /// <summary>
         /// A collection for VideoItemViewModel objects.
         /// </summary>
@@ -57,6 +60,19 @@ namespace OValiantHearts.ViewModels
         public PanoramaViewModel()
         {
             Busy = true;
+
+            if (!NetworkInterface.GetIsNetworkAvailable())
+            {
+                long totalMiliSecond = (DateTime.UtcNow.Ticks - _lastMessageNoConnection.Ticks) / 10000;
+                if (totalMiliSecond < 10000) return;
+
+                _lastMessageNoConnection = DateTime.UtcNow;
+
+                MessageBox.Show("You need internet connection to request city information. Please, chack your internet connetion and try again.");
+
+
+                return;
+            }
 
             loadVideos();
             loadFeeds();
