@@ -7,7 +7,7 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
     d:DataContext="{d:DesignData SampleData/PanoramaViewModelSampleData.xaml}"
     xmlns:u="clr-namespace:DanielVaughan.WindowsPhone7Unleashed" 
     xmlns:ValueConverters="clr-namespace:DanielVaughan.WindowsPhone7Unleashed.ValueConverters"
@@ -15,7 +15,14 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.Opacity="0"
+    shell:SystemTray.ForegroundColor="Brown"
+    shell:SystemTray.BackgroundColor="Brown">
+
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator x:Name="ProgressIndicator" IsIndeterminate="True"  IsVisible="{Binding Busy}"/>
+    </shell:SystemTray.ProgressIndicator>
 
     <phone:PhoneApplicationPage.Resources>
         <ValueConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -27,7 +34,6 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
- 
         <!--Panorama control-->
         <controls:Panorama Title="o valiant hearts" Foreground="White">
             <controls:Panorama.Background>
@@ -101,7 +107,7 @@
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Loading..." Style="{StaticResource LoadingStyle}" Foreground="Brown"/>
+                        <TextBlock Text="" Style="{StaticResource LoadingStyle}" Foreground="Brown"/>
                         <ProgressBar IsIndeterminate="{Binding Busy}" VerticalAlignment="Bottom" Grid.Row="1" Foreground="Brown" />
                     </Grid>
                 </Grid>

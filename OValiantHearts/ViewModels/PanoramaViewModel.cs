@@ -59,6 +59,9 @@ namespace OValiantHearts.ViewModels
 
         public PanoramaViewModel()
         {
+            videoBusy = true;
+            feedBusy = true;
+            tourBusy = true;
             Busy = true;
 
             if (!NetworkInterface.GetIsNetworkAvailable())
@@ -166,12 +169,16 @@ namespace OValiantHearts.ViewModels
                         videoItem.Date = entries[i]["published"]["$t"].ToString();
                         this.Videos.Add(videoItem);
                     }
+                    videoBusy = false;
+                    updateBusy();
                 });
             }
             else
             {
                 if (!response.Canceled)
                 {
+                    videoBusy = false;
+                    updateBusy();
                     // display exception
                     //MessageBox.Show(response.Exception.Message);
                 }
@@ -245,14 +252,16 @@ namespace OValiantHearts.ViewModels
                     {
                         paging = "";
                     }
-                    Busy = false;
+                    feedBusy = false;
+                    updateBusy();
                 });
             }
             else
             {
                 if (!response.Canceled)
                 {
-                    Busy = false;
+                    feedBusy = false;
+                    updateBusy();
                     // display exception
                     //MessageBox.Show(response.Exception.Message);
                 }
@@ -283,13 +292,16 @@ namespace OValiantHearts.ViewModels
 
                             this.Concerts.Add(concertItem);
                     }
-
+                    tourBusy = false;
+                    updateBusy();
                 });
             }
             else
             {
                 if (!response.Canceled)
                 {
+                    tourBusy = false;
+                    updateBusy();
                     // display exception
                     //MessageBox.Show(response.Exception.Message);
                 }
@@ -316,7 +328,7 @@ namespace OValiantHearts.ViewModels
             }
         }
 
-        bool busy;
+        bool busy, videoBusy, feedBusy, tourBusy;
 
         public bool Busy
         {
@@ -344,6 +356,12 @@ namespace OValiantHearts.ViewModels
             {
                 tempEvent(this, e);
             }
+        }
+
+        private void updateBusy()
+        {
+            if (!videoBusy && !feedBusy && !tourBusy)
+                Busy = false;
         }
     }
 }
