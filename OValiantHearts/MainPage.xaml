@@ -16,9 +16,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    shell:SystemTray.Opacity="0"
-    shell:SystemTray.ForegroundColor="Brown"
-    shell:SystemTray.BackgroundColor="Brown">
+    shell:SystemTray.Opacity="0">
 
     <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator x:Name="ProgressIndicator" IsIndeterminate="True"  IsVisible="{Binding Busy}"/>

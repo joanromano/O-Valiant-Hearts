@@ -10,10 +10,10 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    Loaded="PhoneApplicationPage_Loaded">
 
-    <Grid Margin="10">
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="OVHPanoramaBackground.png" Stretch="UniformToFill" />
         </Grid.Background>
@@ -29,28 +29,16 @@
             <ColumnDefinition MaxWidth="100"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Username}" TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Username}" Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}"/>
         <Image Source="{Binding Thumbnail}" Height="100" Width="130" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" />
 
-        <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Message}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Message}" Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}"/>
         <RichTextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="400" Height="300" >
             <Paragraph>
-                <Hyperlink NavigateUri="{Binding Link}" TargetName="_blank">
+                <Hyperlink NavigateUri="{Binding Link}" Foreground="#FF999999" TargetName="_blank">
                     <Run Text="{Binding Link}"/>
                 </Hyperlink>
             </Paragraph>
         </RichTextBox>
     </Grid>
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
-
 </phone:PhoneApplicationPage>

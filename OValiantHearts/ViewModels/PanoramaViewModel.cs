@@ -318,16 +318,6 @@ namespace OValiantHearts.ViewModels
             }
         }
 
-        readonly ObservableCollection<string> items = new ObservableCollection<string>();
-
-        public ObservableCollection<string> Items
-        {
-            get
-            {
-                return items;
-            }
-        }
-
         bool busy, videoBusy, feedBusy, tourBusy;
 
         public bool Busy
