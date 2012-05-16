@@ -17,6 +17,46 @@ namespace OValiantHearts.ViewModels
     {
         private DateTime _lastMessageNoConnection = new DateTime(1970, 1, 1);
 
+        bool busy, videoBusy, feedBusy, tourBusy;
+
+        public bool Busy
+        {
+            get
+            {
+                return busy;
+            }
+            set
+            {
+                if (busy == value)
+                {
+                    return;
+                }
+                busy = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Busy"));
+            }
+        }
+
+        readonly DelegateCommand fetchMoreDataCommand;
+
+        public ICommand FetchMoreDataCommand
+        {
+            get
+            {
+                return fetchMoreDataCommand;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            var tempEvent = PropertyChanged;
+            if (tempEvent != null)
+            {
+                tempEvent(this, e);
+            }
+        }
+
         /// <summary>
         /// A collection for VideoItemViewModel objects.
         /// </summary>
@@ -180,7 +220,7 @@ namespace OValiantHearts.ViewModels
                     videoBusy = false;
                     updateBusy();
                     // display exception
-                    //MessageBox.Show(response.Exception.Message);
+                    MessageBox.Show("Error loading videos - Try again");
                 }
             }
         }
@@ -207,8 +247,10 @@ namespace OValiantHearts.ViewModels
             {
                 if (!response.Canceled)
                 {
+                    feedBusy = false;
+                    updateBusy();
                     // display exception
-                    //MessageBox.Show(response.Exception.Message);
+                    MessageBox.Show("Error loading feeds - Try again");
                 }
             }
         }
@@ -263,7 +305,7 @@ namespace OValiantHearts.ViewModels
                     feedBusy = false;
                     updateBusy();
                     // display exception
-                    //MessageBox.Show(response.Exception.Message);
+                    MessageBox.Show("Error loading feeds - Try again");
                 }
             }
         }
@@ -303,48 +345,8 @@ namespace OValiantHearts.ViewModels
                     tourBusy = false;
                     updateBusy();
                     // display exception
-                    //MessageBox.Show(response.Exception.Message);
+                    MessageBox.Show("Error loading tour - Try again");
                 }
-            }
-        }
-
-        readonly DelegateCommand fetchMoreDataCommand;
-
-        public ICommand FetchMoreDataCommand
-        {
-            get
-            {
-                return fetchMoreDataCommand;
-            }
-        }
-
-        bool busy, videoBusy, feedBusy, tourBusy;
-
-        public bool Busy
-        {
-            get
-            {
-                return busy;
-            }
-            set
-            {
-                if (busy == value)
-                {
-                    return;
-                }
-                busy = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("Busy"));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            var tempEvent = PropertyChanged;
-            if (tempEvent != null)
-            {
-                tempEvent(this, e);
             }
         }
 
