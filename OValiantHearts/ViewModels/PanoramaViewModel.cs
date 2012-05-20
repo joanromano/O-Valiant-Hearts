@@ -173,7 +173,8 @@ namespace OValiantHearts.ViewModels
 
         public void loadTour()
         {
-            var request = new HttpGetRequest("http://dl.dropbox.com/u/8849803/concerts.json");
+            var request = new HttpGetRequest("http://ovaliantheartsmusic.appspot.com/concerts.json");
+            request.Query.Add("period", "last");
 
             Http.Get(request, TourRequestFinished);
         }
