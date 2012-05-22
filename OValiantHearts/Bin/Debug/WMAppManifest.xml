@@ -24,7 +24,7 @@
     <Tokens>
       <PrimaryToken TokenID="OValiantHeartsToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">OVH_173.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>O Valiant Hearts</Title>
         </TemplateType5>

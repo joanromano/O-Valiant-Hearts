@@ -111,7 +111,7 @@ namespace OValiantHearts.ViewModels
 
                 _lastMessageNoConnection = DateTime.UtcNow;
 
-                MessageBox.Show("You need internet connection to request city information. Please, chack your internet connetion and try again.");
+                MessageBox.Show("You need internet connection to request the band's info. Please, check your internet connection and try again.");
 
 
                 return;

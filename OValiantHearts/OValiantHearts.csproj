@@ -156,9 +156,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="PanoramaBackground.png" />
     <Resource Include="OVHPanoramaBackground.png" />
     <Content Include="DotNetZip\Changes.txt" />
@@ -168,6 +165,7 @@
     <Content Include="JsonNET\Newtonsoft.Json.xml" />
     <Resource Include="music-live.png" />
     <Content Include="music.png" />
+    <Content Include="OVH_173.png" />
     <Content Include="OVH_logo.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
